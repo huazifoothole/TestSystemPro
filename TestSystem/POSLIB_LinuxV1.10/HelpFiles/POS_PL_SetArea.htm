@@ -1,0 +1,149 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>int POS_PL_SetArea</title>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>int POS_PL_SetArea(<br>
+<br>
+<i>int hPort,<br>
+&nbsp;<br>
+int nPortType,</i><br>
+<br>
+<i>int nOrgx,<br>
+<br>
+int nOrgy,<br>
+<br>
+int nWidth,<br>
+<br>
+int nHeight,<br>
+<br>
+int nDirection<br>
+</i><br>
+)</h1>
+<p><br>
+<br>
+<b>描述</b><br>
+<br>
+设置页面的打印区域。<br>
+<br>
+<br>
+<br>
+<b>参数<br>
+<br>
+</b>
+<i>hPort</i><br>
+&nbsp;<br>
+[in] 打开的端口句柄。<br>
+&nbsp;<br>
+&nbsp;<br>
+<i>nPortType</i><br>
+&nbsp;<br>
+[in] 端口类型,取值参考<a href="Functions.htm#6.参数nPortType为端口类型时，取值如下：">端口类型说明</a><br>
+<br>
+<br>
+<i>nOrgx</i><br>
+<br>
+[in] 指定区域的 X （水平）方向的起始点和左边界的距离。<br>
+<br>
+可以为 0 到 65535。<br>
+<br>
+<br>
+<i>nOrgy</i><br>
+<br>
+[in] 指定区域的 Y （垂直）方向的起始点和上边界（当前打印头位置）的距离点数。<br>
+<br>
+可以为 0 到 65535。<br>
+<br>
+<br>
+<i>nWidth</i><br>
+<br>
+[in] 指定打印区域的宽度（水平方向）。<br>
+<br>
+可以为 0 到 65535。<br>
+<br>
+<br>
+<i>nHeight</i><br>
+<br>
+[in] 指定打印区域的高度（垂直方向）。<br>
+<br>
+可以为 0 到 65535。<br>
+<br>
+<br>
+<i>nDirection</i><br>
+<br>
+[in] 指定打印区域的方向（原点位置）。<br>
+<br>
+可以为以下列表中所列值之一。</p>
+<table border="1" width="51%" id="table1">
+	<tr>
+		<td width="189">Flag</td>
+		<td width="28">Value</td>
+		<td>Starting Position</td>
+	</tr>
+	<tr>
+		<td width="189">POS_AREA_LEFT_TO_RIGHT </td>
+		<td width="28">0</td>
+		<td>左上角</td>
+	</tr>
+	<tr>
+		<td width="189">POS_AREA_BOTTOM_TO_TOP</td>
+		<td width="28">1</td>
+		<td>左下角</td>
+	</tr>
+	<tr>
+		<td width="189">POS_AREA_RIGHT_TO_LEFT</td>
+		<td width="28">2</td>
+		<td>右下角</td>
+	</tr>
+	<tr>
+		<td width="189">POS_AREA_TOP_TO_BOTTOM</td>
+		<td width="28">3</td>
+		<td>右上角</td>
+	</tr>
+</table>
+<p>
+<br>
+<b><br>
+返回值</b><br>
+<br>
+如果函数成功，则返回值为 POS_SUCCESS。<br>
+<br>
+如果函数失败，则返回值为以下值之一：<br>
+<br>
+POS_FAIL<br>
+<br>
+POS_ERROR_INVALID_HANDLE<br>
+<br>
+POS_ERROR_INVALID_PARAMETER<br>
+<br>
+POS_ERROR_FILE<br>
+<br>
+<br>
+<b><br>
+备注</b><br>
+<br>
+1．由于不同的打印机型号有不同的打印头宽度（或内部缓冲区的宽度），所以可打印区域的宽度是不同的。同样，可打印区域的高度也有可能不同，一般大约是 128 × 8 
+点，如果参数 nWidth 和 nHeight 所指定的值超过此限制。那么可打印区域自动设置为实际的可打印区域。<br>
+<br>
+2．如果打印区域的宽度或高度设置为0，则打印机停止指令的处理，而将随后接受到的数据都当作普通的字符数据。<br>
+<br>
+3．如果打印区域的起始点超出打印机的可打印区域，则打印机停止指令的处理，而将随后接受到的数据都当作普通的字符数据。<br>
+<br>
+<br>
+<br>
+<b>相关指令</b><br>
+<br>
+ESC W xL xH yL yH dxL dxH dyL dyH，ESC T n<br>
+<br>
+　</p>
+
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

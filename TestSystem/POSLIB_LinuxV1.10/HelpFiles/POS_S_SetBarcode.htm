@@ -1,0 +1,274 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>int POS_S_SetBarcode</title>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>int POS_S_SetBarcode(<br>
+<br>
+<i>int hPort,<br>
+&nbsp;<br>
+int nPortType,</i><br>
+<br>
+<i>char *pszInfoBuffer,<br>
+<br>
+int nOrgx,<br>
+<br>
+int nType,<br>
+<br>
+int nWidthX,<br>
+<br>
+int nHeight,<br>
+<br>
+int nHriFontType,<br>
+<br>
+int nHriFontPosition,<br>
+<br>
+int nBytesToPrint</i><br>
+<br>
+)</h1>
+<p><br>
+<b><br>
+描述</b><br>
+<br>
+设置并打印条码。<br>
+<br>
+<br>
+<b><br>
+参数<br>
+<br>
+</b>
+<i>hPort</i><br>
+&nbsp;<br>
+[in] 打开的端口句柄。<br>
+&nbsp;<br>
+&nbsp;<br>
+<i>nPortType</i><br>
+&nbsp;<br>
+[in] 端口类型,取值参考<a href="Functions.htm#6.参数nPortType为端口类型时，取值如下：">端口类型说明</a><br>
+<br>
+<br>
+<i>pszInfoBuffer<br>
+</i><br>
+[in] 指向以 null 结尾的字符串。每个字符允许的范围和格式与具体条码类型有关。<br>
+<br>
+<br>
+<i>nOrgx</i><br>
+<br>
+[in] 指定将要打印的条码的水平起始点与左边界的距离点数。<br>
+<br>
+可以为 0 到65535。<br>
+<br>
+<br>
+<i>nType</i><br>
+<br>
+[in] 指定条码的类型。<br>
+<br>
+可以为以下列表中所列值之一。另请参考“附录 B 条码说明”。</p>
+<table id="table1" width="68%" border="1">
+	<tr>
+		<td width="204">Flag</td>
+		<td width="106">Value</td>
+		<td>Meaning</td>
+	</tr>
+	<tr>
+		<td width="204">POS_BARCODE_TYPE_UPC_A</td>
+		<td width="106">0x41</td>
+		<td>UPC-A</td>
+	</tr>
+	<tr>
+		<td width="204">POS_BARCODE_TYPE_UPC_E</td>
+		<td width="106">0x42</td>
+		<td>UPC-C</td>
+	</tr>
+	<tr>
+		<td width="204">POS_BARCODE_TYPE_JAN13</td>
+		<td width="106">0x43</td>
+		<td>JAN13(EAN13)</td>
+	</tr>
+	<tr>
+		<td width="204">POS_BARCODE_TYPE_JAN8</td>
+		<td width="106">0x44</td>
+		<td>JAN8(EAN8)</td>
+	</tr>
+	<tr>
+		<td width="204">POS_BARCODE_TYPE_CODE39</td>
+		<td width="106">0x45</td>
+		<td>CODE39</td>
+	</tr>
+	<tr>
+		<td width="204">POS_BARCODE_TYPE_ITF</td>
+		<td width="106">0x46</td>
+		<td>INTERLEAVED 2 OF 5</td>
+	</tr>
+	<tr>
+		<td width="204">POS_BARCODE_TYPE_CODEBAR</td>
+		<td width="106">0x47</td>
+		<td>CODEBAR</td>
+	</tr>
+	<tr>
+		<td width="204">POS_BARCODE_TYPE_CODE93</td>
+		<td width="106">0x48</td>
+		<td>25</td>
+	</tr>
+	<tr>
+		<td width="204">POS_BARCODE_TYPE_CODE128</td>
+		<td width="106">0x49</td>
+		<td>CODE 128</td>
+	</tr>
+</table>
+<p><br>
+<i>nWidthX</i><br>
+<br>
+[in] 指定条码的基本元素宽度。<br>
+<br>
+可以为以下列表中所列值（n）之一。</p>
+<table id="table2" width="46%" border="1">
+	<tr>
+		<td width="4%" rowSpan="2">n</td>
+		<td width="11%" rowSpan="2">单基本模块宽度<br>
+		（连续型）</td>
+		<td colSpan="2">双基本模块宽度（离散型）</td>
+	</tr>
+	<tr>
+		<td width="13%">窄元素宽度</td>
+		<td width="11%">宽元素宽度</td>
+	</tr>
+	<tr>
+		<td width="4%">2</td>
+		<td width="11%">0．25mm</td>
+		<td width="13%">0．25mm</td>
+		<td width="11%">0．625mm</td>
+	</tr>
+	<tr>
+		<td width="4%">3</td>
+		<td width="11%">0．375mm</td>
+		<td width="13%">0．375mm</td>
+		<td width="11%">1．0mm</td>
+	</tr>
+	<tr>
+		<td width="4%">4</td>
+		<td width="11%">0．5mm</td>
+		<td width="13%">0．5mm</td>
+		<td width="11%">1．25mm</td>
+	</tr>
+	<tr>
+		<td width="4%">5</td>
+		<td width="11%">0．625mm</td>
+		<td width="13%">0．625mm</td>
+		<td width="11%">1．625mm</td>
+	</tr>
+	<tr>
+		<td width="4%">6</td>
+		<td width="11%">0．75mm</td>
+		<td width="13%">0．75mm</td>
+		<td width="11%">1.875mm</td>
+	</tr>
+</table>
+<p><br>
+<i>nHeight</i><br>
+<br>
+[in] 指定条码的高度点数。<br>
+<br>
+可以为 1 到 255 。默认值为162 点。<br>
+<br>
+<br>
+<i>nHriFontType</i><br>
+<br>
+[in] 指定 HRI（Human Readable Interpretation）字符的字体类型。<br>
+<br>
+可以为以下列表中所列值之一。</p>
+<table id="table3" width="60%" border="1">
+	<tr>
+		<td width="192">Flag</td>
+		<td width="71">Value</td>
+		<td>Meaning</td>
+	</tr>
+	<tr>
+		<td width="192">POS_FONT_TYPE_STANDARD</td>
+		<td width="71">0x00</td>
+		<td>标准ASCII</td>
+	</tr>
+	<tr>
+		<td width="192">POS_FONT_TYPE_COMPRESSED</td>
+		<td width="71">0x01</td>
+		<td>压缩ASCII</td>
+	</tr>
+</table>
+<p><br>
+<i>nHriFontPosition</i><br>
+<br>
+[in] 指定HRI（Human Readable Interpretation）字符的位置。<br>
+<br>
+可以为以下列表中所列值之一。</p>
+<table id="table4" width="69%" border="1">
+	<tr>
+		<td width="189">Flag</td>
+		<td width="88">Value</td>
+		<td>Meaning</td>
+	</tr>
+	<tr>
+		<td width="189">POS_HRI_POSITION_NONE </td>
+		<td width="88">0x00</td>
+		<td>不打印</td>
+	</tr>
+	<tr>
+		<td width="189">POS_HRI_POSITION_ABOVE</td>
+		<td width="88">0x01</td>
+		<td>只在条码上方打印</td>
+	</tr>
+	<tr>
+		<td width="189">POS_HRI_POSITION_BELOW</td>
+		<td width="88">0x02</td>
+		<td>只在条码下方打印</td>
+	</tr>
+	<tr>
+		<td width="189">POS_HRI_POSITION_BOTH </td>
+		<td width="88">0x03</td>
+		<td>条码上、下方都打印</td>
+	</tr>
+</table>
+<p><br>
+<i>nBytesToPrint</i><br>
+<br>
+[in] 指定由参数 pszInfoBuffer指向的字符串个数，即将要发送给打印机的字符总数。具体值与条码类型有关。<br>
+<br>
+<br>
+<br>
+<b>返回值</b><br>
+<br>
+如果函数成功，则返回值为 POS_SUCCESS。<br>
+<br>
+如果函数失败，则返回值为以下值之一：<br>
+<br>
+POS_FAIL<br>
+<br>
+POS_ERROR_INVALID_HANDLE<br>
+<br>
+POS_ERROR_INVALID_PARAMETER<br>
+<br>
+POS_ERROR_FILE<br>
+<br>
+<br>
+<b><br>
+备注</b><br>
+<br>
+另请参考<a href="POS_PL_SetBarcode.htm">POS_PL_SetBarcode</a> 和 “<a href="appendixB.htm">附录 B 条码说明</a>”。<br>
+<br>
+<br>
+<br>
+<b>相关指令</b><br>
+<br>
+ESC $ nL nH，GS w n，GS h n，GS f n，GS H，GS k m n d1…dn<br>
+<br>
+　</p>
+
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

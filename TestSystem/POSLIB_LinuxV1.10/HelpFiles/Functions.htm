@@ -1,0 +1,291 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>介绍</title>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>函数介绍</h1>
+<p>1．通用函数</p>
+<p>这一部分函数同时支持打印机的三种打印模式（标准模式，页模式，标签模式）。</p>
+<table id="table6" width="56%" border="1">
+	<tr>
+		<td width="186">
+		<a href="POS_Open.htm">POS_Open</a></td>
+		<td>打开端口，建立与打印机的通信连接</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_Close.htm">POS_Close</a></td>
+		<td>关闭端口，断开与打印机的连接</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_Reset.htm">POS_Reset</a></td>
+		<td>复位打印机</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_SetMode.htm">POS_SetMode</a></td>
+		<td>设置打印机的打印模式和出纸模式</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_SetMode.htm">POS_SetMotionUnit</a></td>
+		<td>设置打印机的移动单位</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_SetCharSetAndCodePage.htm">POS_SetCharSetAndCodePage</a></td>
+		<td>设置国际字符集和代码页</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_FeedLine.htm">POS_FeedLine</a></td>
+		<td>打印一行或回车换行</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_SetLineSpacing.htm">POS_SetLineSpacing</a></td>
+		<td>设置字符行高</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_SetRightSpacing.htm">POS_SetRightSpacing</a></td>
+		<td>设置字符右间距</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_PreDownloadBmpToRAM.htm">POS_PreDownloadBmpToRAM</a></td>
+		<td>预下载一幅位图到 RAM</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_PreDownloadBmpsToFlash.htm">POS_PreDownloadBmpsToFlash</a></td>
+		<td>预下载若干位图到 Flash</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_QueryStatus.htm">POS_QueryStatus</a></td>
+		<td>非实时查询状态</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_RTQueryStatus.htm">POS_RTQueryStatus</a></td>
+		<td>实时查询状态</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_NetQueryStatus.htm">POS_NETQueryStatus</a></td>
+		<td>查询网络设备状态</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_KickOutDrawer.htm">POS_KickOutDrawer</a></td>
+		<td>打开钱箱</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_CutPaper.htm">POS_CutPaper</a></td>
+		<td>切纸</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_BeginSaveFile.htm">POS_BeginSaveFile</a></td>
+		<td>将数据写入文件</td>
+	</tr>
+	<tr>
+		<td width="186">
+		<a href="POS_EndSaveFile.htm">POS_EndSaveFile</a></td>
+		<td>结束将数据写入文件</td>
+	</tr>
+	<tr>
+		<td width="186"><a href="POS_Raster_DownloadAndPrintBmp.htm">POS_Raster_DownloadAndPrintBmp</a></td>
+		<td>下载并立即打印光栅位图</td>
+	</tr>
+	<tr>
+		<td width="186"><a href="POS_Raster_DownloadAndPrintBmp_A.htm">POS_Raster_DownloadAndPrintBmp_A</a></td>
+		<td>下载并立即打印光栅位图</td>
+	</tr>
+	<tr>
+		<td width="186"><a href="POS_SetTimeOuts.htm">POS_SetTimeOuts</a></td>
+		<td>设置USB通讯超时时间</td>
+	</tr>
+</table>
+<p>2．只支持标准打印模式（行模式）下的打印函数</p>
+<table id="table7" width="55%" border="1">
+	<tr>
+		<td width="184">
+		<a href="POS_S_SetAreaWidth.htm">POS_S_SetAreaWidth</a></td>
+		<td>设置打印区域宽度</td>
+	</tr>
+	<tr>
+		<td width="184">
+		<a href="POS_S_TextOut.htm">POS_S_TextOut</a></td>
+		<td>打印文本</td>
+	</tr>
+	<tr>
+		<td width="184">
+		<a href="POS_S_DownloadAndPrintBmp.htm">POS_S_DownloadAndPrintBmp</a></td>
+		<td>下载并立即打印位图</td>
+	</tr>
+	<tr>
+		<td width="184">
+		<a href="POS_S_PrintBmpInRAM.htm">POS_S_PrintBmpInRAM</a></td>
+		<td>打印已经下载到 RAM 中的位图</td>
+	</tr>
+	<tr>
+		<td width="184">
+		<a href="POS_S_PrintBmpInFlash.htm">POS_S_PrintBmpInFlash</a></td>
+		<td>打印已经下载到 Flash 中的位图</td>
+	</tr>
+	<tr>
+		<td width="184">
+		<a href="POS_S_SetBarcode.htm">POS_S_SetBarcode</a></td>
+		<td>打印条码</td>
+	</tr>
+</table>
+<p>3．只支持页打印模式（P）或标签打印模式（L）下的打印函数</p>
+<table id="table8" width="55%" border="1">
+	<tr>
+		<td width="184">
+		<a href="POS_PL_SetArea.htm">POS_PL_SetArea</a></td>
+		<td>设置打印区域</td>
+	</tr>
+	<tr>
+		<td width="184">
+		<a href="POS_PL_TextOut.htm">POS_PL_TextOut</a></td>
+		<td>打印文本</td>
+	</tr>
+	<tr>
+		<td width="184" height="19">
+		<a href="POS_PL_DownloadAndPrintBmp.htm">POS_PL_DownloadAndPrintBmp</a></td>
+		<td height="19">下载并立即打印位图</td>
+	</tr>
+	<tr>
+		<td width="184">
+		<a href="POS_PL_PrintBmpInRAM.htm">POS_PL_PrintBmpInRAM</a></td>
+		<td>打印已经下载到 RAM 中的位图</td>
+	</tr>
+	<tr>
+		<td width="184">
+		<a href="POS_PL_SetBarcode.htm">POS_PL_SetBarcode</a></td>
+		<td>打印条码</td>
+	</tr>
+	<tr>
+		<td width="184">
+		<a href="POS_PL_Print.htm">POS_PL_Print</a></td>
+		<td>打印整页或标签</td>
+	</tr>
+	<tr>
+		<td width="184">
+		<a href="POS_PL_Clear.htm">POS_PL_Clear</a></td>
+		<td>清除页或标签的数据缓冲区</td>
+	</tr>
+</table>
+<p>4．杂项<br>
+<br>
+主要用于调试和自定义控制函数使用。</p>
+<table id="table9" width="55%" border="1">
+	<tr>
+		<td width="183">
+		<a href="POS_WriteFile.htm">POS_WriteFile</a></td>
+		<td>往端口或文件写数据</td>
+	</tr>
+	<tr>
+		<td width="183">
+		<a href="POS_ReadFile.htm">POS_ReadFile</a></td>
+		<td>从端口或文件读数据</td>
+	</tr>
+	<tr>
+		<td width="183">
+		<a href="POS_GetVersionInfo.htm">POS_GetVersionInfo</a></td>
+		<td>获取 dll 的版本信息</td>
+	</tr>
+</table>
+<p><a name="5．函数的返回值说明">5．函数的返回值说明</a></p>
+<table id="table10" width="60%" border="1">
+	<tr>
+		<td align="middle" width="194" bgColor="#eeeeff"><b>Flag</b></td>
+		<td align="middle" width="63" bgColor="#eeeeff"><b>Value</b></td>
+		<td align="middle" bgColor="#eeeeff"><b>Meaning</b></td>
+	</tr>
+	<tr>
+		<td width="194">POS_SUCCESS</td>
+		<td width="63">1001</td>
+		<td>函数执行成功</td>
+	</tr>
+	<tr>
+		<td width="194" height="21">POS_FAIL</td>
+		<td width="63" height="21">1002</td>
+		<td height="21">函数执行失败</td>
+	</tr>
+	<tr>
+		<td width="194">POS_ERROR_INVALID_HANDLE</td>
+		<td width="63">1101</td>
+		<td>端口或文件的句柄无效</td>
+	</tr>
+	<tr>
+		<td width="194">POS_ERROR_INVALID_PARAMETER</td>
+		<td width="63">1102</td>
+		<td>参数无效</td>
+	</tr>
+	<tr>
+		<td width="194">POS_ERROR_NOT_BITMAP</td>
+		<td width="63">1103</td>
+		<td>不是位图格式的文件</td>
+	</tr>
+	<tr>
+		<td width="194">POS_ERROR_NOT_MONO_BITMAP</td>
+		<td width="63">1104</td>
+		<td>位图不是单色的</td>
+	</tr>
+	<tr>
+		<td width="194">POS_ERROR_BEYOND_AREA</td>
+		<td width="63">1105</td>
+		<td>位图超出打印机可以处理的大小</td>
+	</tr>
+	<tr>
+		<td width="194">POS_ERROR_INVALID_PATH</td>
+		<td width="63">1106</td>
+		<td>没有找到指定的文件路径或名</td>
+	</tr>
+	<tr>
+		<td width="194">POS_ERROR_FILE </td>
+		<td width="63">1301</td>
+		<td>文件操作失败</td>
+	</tr>
+</table>
+<p><a name="6.参数nPortType为端口类型时，取值如下：">6.参数nPortType为端口类型时，取值如下：</a></p>
+<table id="table11" height="0" width="257" border="1">
+	<tr>
+		<td width="59">Value</td>
+		<td>Meaning</td>
+	</tr>
+	<tr>
+		<td width="59">0</td>
+		<td>串口</td>
+	</tr>
+	<tr>
+		<td width="59">1</td>
+		<td>并口</td>
+	</tr>
+	<tr>
+		<td width="59">2</td>
+		<td>USB接口</td>
+	</tr>
+	<tr>
+		<td width="59">3</td>
+		<td>网络接口</td>
+	</tr>
+</table>
+
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

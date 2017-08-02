@@ -1,0 +1,115 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>int POS_QueryStatus</title>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>int POS_QueryStatus(<br>
+<br>
+<i>int hPort,<br>
+&nbsp;<br>
+int nPortType,</i><br>
+<br>
+<i>char *pszStatus,<br>
+<br>
+int nTimeouts</i><br>
+<br>
+)</h1>
+<p><br>
+<br>
+<b>描述</b><br>
+<br>
+通过串口查询打印机当前的状态。此函数是非实时的。<br>
+<br>
+<br>
+<br>
+<b>参数<br>
+<br>
+</b>
+<i>hPort</i><br>
+&nbsp;<br>
+[in] 打开的端口句柄。<br>
+&nbsp;<br>
+&nbsp;<br>
+<i>nPortType</i><br>
+&nbsp;<br>
+[in] 端口类型,取值参考<a href="Functions.htm#6.参数nPortType为端口类型时，取值如下：">端口类型说明</a><br>
+<br>
+<br>
+<i>pszStatus</i><br>
+<br>
+[out] 指向返回的状态数据的缓冲区，缓冲区大小为 1 个字节。<br>
+<br>
+返回的各状态位意义如下表所示：</p>
+<table border="1" width="67%" id="table1">
+	<tr>
+		<td>Bit</td>
+		<td width="68">Status</td>
+		<td width="483">Meaning</td>
+	</tr>
+	<tr>
+		<td>0，1</td>
+		<td width="68">0/1</td>
+		<td width="483">容纸器中有纸 / 纸将用尽</td>
+	</tr>
+	<tr>
+		<td>2，3</td>
+		<td width="68">0/1</td>
+		<td width="483">打印头处有纸 / 无纸</td>
+	</tr>
+	<tr>
+		<td>4，5</td>
+		<td width="68">0/1</td>
+		<td width="483">钱箱连接器引脚 3 的电平为低 / 高（表示打开或关闭）</td>
+	</tr>
+	<tr>
+		<td>6，7</td>
+		<td width="68">0</td>
+		<td width="483">保留（固定为0）</td>
+	</tr>
+</table>
+<p><i>nTimeouts</i><br>
+<br>
+[in] 设置查询状态时大约的超时时间（毫秒）。<br>
+<br>
+<br>
+<br>
+<b>返回值</b><br>
+<br>
+如果函数成功，则返回值为 POS_SUCCESS。<br>
+<br>
+如果函数失败，则返回值为以下值之一：<br>
+<br>
+POS_FAIL<br>
+<br>
+POS_ERROR_INVALID_HANDLE<br>
+<br>
+POS_ERROR_INVALID_PARAMETER<br>
+<br>
+POS_ERROR_FILE<br>
+<br>
+<br>
+<br>
+<b>备注</b><br>
+<br>
+1．此函数在并口通讯中无效。<br>
+<br>
+2．部分型号的打印机在上盖打开或打印头抬起、缺纸、Feed键按下等情况下，不能返回打印机的状态。<br>
+<br>
+3．另请参考 <a href="POS_RTQueryStatus.htm">POS_RTQueryStatus</a>。<br>
+<br>
+<br>
+<b><br>
+相关指令</b><br>
+<br>
+GS r n<br>
+　</p>
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

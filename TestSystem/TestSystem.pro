@@ -44,6 +44,8 @@ HEADERS  += testsystemui.h \
     copysysthread.h \
     videoplay.h
 
+RC_FILE += version.rc
+
 FORMS    += testsystemui.ui \
     engine/keyboardwidget.ui \
     choiceotherpro.ui \

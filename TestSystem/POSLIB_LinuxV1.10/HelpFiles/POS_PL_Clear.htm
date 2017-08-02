@@ -1,0 +1,87 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>int POS_PL_Clear</title>
+<style>
+<!--
+div.Section1
+	{page:Section1;}
+ p.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+span.GramE
+	{}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>int POS_PL_Clear(<br>
+<br>
+<i>int hPort,<br>
+&nbsp;<br>
+int nPortType<br>
+<br>
+</i>)</h1>
+<p>&nbsp;<br>
+<b>描述</b><br>
+&nbsp;<br>
+清除票面和标签的打印缓冲区中的数据。<br>
+<br>
+<br>
+&nbsp;<br>
+<b>参数</b><br>
+&nbsp;<br>
+<i>hPort</i><br>
+&nbsp;<br>
+[in] 打开的端口句柄。<br>
+&nbsp;<br>
+&nbsp;<br>
+<i>nPortType</i><br>
+&nbsp;<br>
+[in] 端口类型,取值参考<a href="Functions.htm#6.参数nPortType为端口类型时，取值如下：">端口类型说明</a><br>
+<br>
+<br>
+&nbsp;<br>
+<b>返回值</b><br>
+&nbsp;<br>
+如果函数成功，则返回值为 POS_SUCCESS。<br>
+&nbsp;<br>
+如果函数失败，则返回值为以下值之一：<br>
+<br>
+POS_FAIL<br>
+<br>
+POS_ERROR_INVALID_HANDLE<br>
+<br>
+POS_ERROR_INVALID_PARAMETER<br>
+<br>
+POS_ERROR_FILE<br>
+<br>
+<br>
+&nbsp;<br>
+<b>备注</b><br>
+&nbsp;<br>
+1．如果函数成功，则打印机内部的当前页缓冲区被清除。<br>
+&nbsp;<br>
+2．另请参考 <a href="POS_PL_Print.htm">POS_PL_Print</a>，<a href="POS_SetMode.htm">POS_SetMode</a>。<br>
+<br>
+<br>
+<b>&nbsp;<br>
+相关指令</b><br>
+&nbsp;<br>
+CAN<br>
+　</p>
+
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

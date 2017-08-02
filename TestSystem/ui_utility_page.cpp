@@ -8,7 +8,8 @@ void TestSystemUI::BCRScanFinished(int errCode, QString info)
 
         static int iScanTestCorrect, iScanTestError, iScanTestTotal;
        // static QString strInfo;
-	qDebug()<<"BCR read data: "<<info;
+//	qDebug()<<"BCR read data: "<<info;
+        ui->labelBCRInfo->setText(" ");
         if(errCode == 0)
 	{
 		//条码枪扫描识别

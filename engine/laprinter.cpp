@@ -376,9 +376,12 @@ bool LAPrinter::LoadDriverSympol(const char *const file)
 		printf("load PrintPage is %s\n",error);
 		return false;
 	}
-
-
-
+        PrinterExec_ESC_POS = (Exec_ESC_POS)dlsym(dp_,"PExec_ESC_POS");
+        if((error=dlerror()) != NULL)
+        {
+                printf("load PExec_ESC_POS is %s\n",error);
+                return false;
+        }
 
 
 
@@ -1205,9 +1208,7 @@ bool LAPrinter::GetPrinterHWInformation(char *buf, int length)
 
 void LAPrinter::PrintTestBlock()
 {
-    if(PrinterPrintStatus == NULL){
-        return;
-    }
+
 	if(pthread_mutex_trylock(&printerMutex))
 	{
 		qDebug("打印机繁忙!");
@@ -1225,6 +1226,18 @@ void LAPrinter::PrintTestBlock()
         if(PrinterPrintStatus != NULL){
             PrinterPrintStatus();
             sleep(3);
+        }else{
+                    char buf[10];
+                    buf[0] = 0x1D;
+                    buf[1] = 0x28;
+                    buf[2]=0x41;
+                    buf[3]=0x02;
+                    buf[4]=0x00;
+                    buf[5]=0x00;
+                    buf[6]=0x02;
+             bool ret = PrinterExec_ESC_POS(buf,7);
+             qDebug()<<"ret =="<<ret;
+             sleep(1);
         }
 //        PrinterCutPaper();
 	pthread_mutex_unlock(&printerMutex);

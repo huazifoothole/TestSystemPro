@@ -1,0 +1,84 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>int POS_SetLineSpacing</title>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>int POS_SetLineSpacing(<br>
+<br>
+<i>int hPort,<br>
+&nbsp;<br>
+int nPortType,</i><br>
+<br>
+<i>int nDistance</i><br>
+<br>
+)</h1>
+<p><br>
+<br>
+<b>描述</b><br>
+<br>
+设置字符的行高。<br>
+<br>
+<br>
+<b><br>
+参数<br>
+<br>
+</b>
+<i>hPort</i><br>
+&nbsp;<br>
+[in] 打开的端口句柄。<br>
+&nbsp;<br>
+&nbsp;<br>
+<i>nPortType</i><br>
+&nbsp;<br>
+[in] 端口类型,取值参考<a href="Functions.htm#6.参数nPortType为端口类型时，取值如下：">端口类型说明</a><br>
+<br>
+<br>
+<i>nDistance</i><br>
+<br>
+[in] 指定行高点数。<br>
+<br>
+可以为 0 到 255。每点的距离与打印头分辨率相关。<br>
+<br>
+<br>
+<br>
+<b>返回值</b><br>
+<br>
+如果函数成功，则返回值为 POS_SUCCESS。<br>
+<br>
+如果函数失败，则返回值为以下值之一：<br>
+<br>
+POS_FAIL<br>
+<br>
+POS_ERROR_INVALID_HANDLE<br>
+<br>
+POS_ERROR_INVALID_PARAMETER<br>
+<br>
+POS_ERROR_FILE<br>
+<br>
+<br>
+<br>
+<b>备注</b><br>
+<br>
+1、如果把行高设置为0，则打印机使用内部的默认行高值，即1/6英寸。如果打印头纵向分辨率为180dpi 则相当于 31 点高。<br>
+<br>
+2、如果行高被设置为小于当前的字符高度，则打印机将使用当前字符高度为行高。<br>
+<br>
+3、另请参考 <a href="POS_SetRightSpacing.htm">POS_SetRightSpacing</a>。<br>
+<br>
+<br>
+<br>
+<b>相关指令</b><br>
+<br>
+ESC 2，ESC 3 n<br>
+　</p>
+
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

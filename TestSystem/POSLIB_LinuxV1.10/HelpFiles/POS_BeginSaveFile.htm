@@ -1,0 +1,77 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>void POS_BeginSaveFile</title>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>int POS_BeginSaveFile(<br>
+<br>
+<i>int hPort,</i><br>
+<br>
+<i>char *lpFileName,<br>
+<br>
+BOOL bToPrinter</i><br>
+<br>
+)</h1>
+<p>　</p>
+<p><b>描述</b><br>
+<br>
+开始把发往打印机（端口）的数据保存到指定的文件。<br>
+<br>
+<br>
+<br>
+<b>参数</b><br>
+<br>
+<i>hPort</i><br>
+<br>
+[in] 打开的端口句柄。<br>
+<br>
+<br>
+<i>lpFileName</i><br>
+<br>
+[in] 保存数据的文件名称，是null结尾的字符串。可以是绝对路径，也可以是相对路径。<br>
+<br>
+<br>
+<i>bToPrinter</i><br>
+<br>
+[in] <br>
+<br>
+TRUE ：指定是否在保存数据到文件的同时，把数据也发送到打印机（端口）。 <br>
+<br>
+FALSE ：指定是否在保存数据到文件的同时，不把数据也发送到打印机（端口）。<br>
+<br>
+<br>
+<br>
+<b>返回值<br>
+</b><br>
+如果函数成功，则返回值为 POS_SUCCESS。<br>
+<br>
+如果函数失败，则返回值为以下值之一：<br>
+<br>
+POS_ERROR_INVALID_PARAMETER<br>
+<br>
+POS_ERROR_FILE<br>
+<br>
+<br>
+<br>
+<b>备注</b><br>
+<br>
+1． 如果指定的文件存在，则以追加方式不断把数据保存到此文件；如果指定的文件不存在，则会创建，然后再以追加方式保存数据；如果文件为只读属性，则返回POS_ERROR_FILE。<br>
+<br>
+2． 另请参考<a href="POS_EndSaveFile.htm">POS_EndSaveFile</a>。<br>
+<br>
+<br>
+<b>相关指令</b><br>
+<br>
+无。<br>
+　</p>
+
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>int POS_S_TextOut</title>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>int POS_S_TextOut(<br>
+<br>
+<i>int hPort,<br>
+&nbsp;<br>
+int nPortType,</i><br>
+<br>
+<i>char *pszString,<br>
+<br>
+int nOrgx,<br>
+<br>
+int nWidthTimes,<br>
+<br>
+int nHeightTimes,<br>
+<br>
+int nFontType,<br>
+<br>
+int nFontStyle<br>
+</i><br>
+)</h1>
+<p><br>
+<br>
+<b>描述</b><br>
+<br>
+把将要打印的字符串数据发送到打印缓冲区中，并指定X 方向（水平）上的绝对起始点位置，指定每个字符宽度和高度方向上的放大倍数、类型和风格。<br>
+<br>
+<br>
+<br>
+<b>参数<br>
+<br>
+</b>
+<i>hPort</i><br>
+&nbsp;<br>
+[in] 打开的端口句柄。<br>
+&nbsp;<br>
+&nbsp;<br>
+<i>nPortType</i><br>
+&nbsp;<br>
+[in] 端口类型,取值参考<a href="Functions.htm#6.参数nPortType为端口类型时，取值如下：">端口类型说明</a><br>
+<br>
+<br>
+<i>pszString</i><br>
+<br>
+[in] 指向以 null 结尾的字符串缓冲区。<br>
+<br>
+<br>
+<i>nOrgx<br>
+</i><br>
+[in] 指定 X 方向（水平）的起始点位置离左边界的点数。<br>
+<br>
+可以为 0 到 65535。<br>
+<br>
+<br>
+<i>nWidthTimes</i><br>
+<br>
+[in] 指定字符的宽度方向上的放大倍数。<br>
+<br>
+可以为 1到 6。<br>
+<br>
+<br>
+<i>nHeightTimes</i><br>
+<br>
+[in] 指定字符高度方向上的放大倍数。<br>
+<br>
+可以为 1 到 6。<br>
+<br>
+<br>
+<i>nFontType<br>
+</i><br>
+[in] 指定字符的字体类型。<br>
+<br>
+可以为以下列表中所列值之一。</p>
+<table id="table1" width="63%" border="1">
+	<tr>
+		<td width="209">Flag</td>
+		<td width="87">Value</td>
+		<td>Meaning</td>
+	</tr>
+	<tr>
+		<td width="209">POS_FONT_TYPE_STANDARD</td>
+		<td width="87">0x00</td>
+		<td>标准 ASCII</td>
+	</tr>
+	<tr>
+		<td width="209">POS_FONT_TYPE_COMPRESSED</td>
+		<td width="87">0x01</td>
+		<td>压缩 ASCII </td>
+	</tr>
+	<tr>
+		<td width="209">POS_FONT_TYPE_UDC</td>
+		<td width="87">0x02</td>
+		<td>用户自定义字符</td>
+	</tr>
+	<tr>
+		<td width="209">POS_FONT_TYPE_CHINESE</td>
+		<td width="87">0x03</td>
+		<td>标准 “宋体”</td>
+	</tr>
+</table>
+<p><br>
+<i>nFontStyle</i><br>
+<br>
+[in] 指定字符的字体风格。<br>
+<br>
+可以为以下列表中的一个或若干个。</p>
+<table id="table2" width="70%" border="1">
+	<tr>
+		<td width="219">Flag</td>
+		<td width="92">Value</td>
+		<td>Meaning</td>
+	</tr>
+	<tr>
+		<td width="219">POS_FONT_STYLE_NORMAL</td>
+		<td width="92">0x00</td>
+		<td>正常</td>
+	</tr>
+	<tr>
+		<td width="219">POS_FONT_STYLE_BOLD</td>
+		<td width="92">0x08</td>
+		<td>加粗</td>
+	</tr>
+	<tr>
+		<td width="219">POS_FONT_STYLE_THIN_UNDERLINE</td>
+		<td width="92">0x80</td>
+		<td>1点粗的下划线</td>
+	</tr>
+	<tr>
+		<td width="219">POS_FONT_STYLE_THICK_UNDERLINE</td>
+		<td width="92">0x100</td>
+		<td>2点粗的下划线</td>
+	</tr>
+	<tr>
+		<td width="219">POS_FONT_STYLE_UPSIDEDOWN</td>
+		<td width="92">0x200</td>
+		<td>倒置（只在行首有效）</td>
+	</tr>
+	<tr>
+		<td width="219">POS_FONT_STYLE_REVERSE</td>
+		<td width="92">0x400</td>
+		<td>反显（黑底白字）</td>
+	</tr>
+	<tr>
+		<td width="219">POS_FONT_STYLE_SMOOTH</td>
+		<td width="92">0x800</td>
+		<td>平滑处理（用于放大时）</td>
+	</tr>
+	<tr>
+		<td width="219">POS_FONT_STYLE_CLOCKWISE_90</td>
+		<td width="92">0x1000</td>
+		<td>每个字符顺时针旋转 90 度</td>
+	</tr>
+</table>
+<p><br>
+<br>
+<b>返回值</b><br>
+<br>
+如果函数成功，则返回值为 POS_SUCCESS。<br>
+<br>
+如果函数失败，则返回值为以下值之一：<br>
+<br>
+POS_FAIL<br>
+<br>
+POS_ERROR_INVALID_HANDLE<br>
+<br>
+POS_ERROR_INVALID_PARAMETER<br>
+<br>
+POS_ERROR_FILE<br>
+<br>
+<br>
+<br>
+<b>备注</b><br>
+<br>
+1．在打印机中，一般内部已有字体类型如下表所示，但是不同机型会有所不同，可以参考打印机的测试样张。</p>
+<table border="1" width="42%" id="table3">
+	<tr>
+		<td width="152">Font Type</td>
+		<td>Size (W * H)</td>
+	</tr>
+	<tr>
+		<td width="152">Standard ASCII</td>
+		<td>12 * 24 / 13 * 24</td>
+	</tr>
+	<tr>
+		<td width="152">Compressed ASCII</td>
+		<td>9 * 17</td>
+	</tr>
+	<tr>
+		<td width="152">标准宋体</td>
+		<td>24 * 24</td>
+	</tr>
+</table>
+<p>2．如果字符风格（nFontStyle）设置为“反显（POS_FONT_STYLE_REVERSE）”，或“顺时针旋转90度（POS_FONT_STYLE_CLOCKWISE_90）”，那么“细下划线（POS_FONT_STYLE_THIN_UNDERLINE）” 
+和“粗下划线（POS_FONT_STYLE_THICK_UNDERLINE）”的功能将无效。<br>
+<br>
+3．如果在汉字字符模式下，则一次调用时，标准ASCII字符（除部分符号和全角下的符号）和汉字可以混合打印；如果在ASCII字符模式下，则只可以打印标准 
+ASCII 字符和压缩的ASCII字符。<br>
+<br>
+4．此函数并不立即打印传入的字符串，而是一直到调用函数 <a href="POS_FeedLine.htm">POS_FeedLine</a> 
+时才进行实际的进纸并打印的动作。但是，如果传入的字符串已经大于可打印宽度时，那么会自动进纸并打印。<br>
+<br>
+5．另请参考 <a href="POS_PL_TextOut.htm">POS_PL_TextOut</a>。<br>
+<br>
+<br>
+<br>
+<b>相关指令</b><br>
+<br>
+ESC $ nL nH，GS M n，GS B n，GS b n，GS ! n，ESC E n，ESC – n<br>
+<br>
+　</p>
+
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

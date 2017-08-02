@@ -1,0 +1,188 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>int POS_SetCharSetAndCodePage</title>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>int POS_SetCharSetAndCodePage(<br>
+<br>
+<i>int hPort,<br>
+&nbsp;<br>
+int nPortType,</i><br>
+<br>
+<i>int nCharSet,<br>
+<br>
+int nCodePage</i><br>
+<br>
+)</h1>
+<p><br>
+<br>
+<b>描述</b><br>
+<br>
+选择国际字符集和代码页。<br>
+<br>
+<br>
+<br>
+<b>参数<br>
+<br>
+</b>
+<i>hPort</i><br>
+&nbsp;<br>
+[in] 打开的端口句柄。<br>
+&nbsp;<br>
+&nbsp;<br>
+<i>nPortType</i><br>
+&nbsp;<br>
+[in] 端口类型,取值参考<a href="Functions.htm#6.参数nPortType为端口类型时，取值如下：">端口类型说明</a><br>
+<br>
+<br>
+<i>nCharSet</i><br>
+<br>
+[in] 指定国际字符集。不同的国际字符集对0x23到0x7E的ASCII码值对应的符号定义是不同的。<br>
+<br>
+可以为以下列表中所列值之一。</p>
+<table border="1" width="29%" id="table1">
+	<tr>
+		<td width="94">Value</td>
+		<td>Meaning</td>
+	</tr>
+	<tr>
+		<td width="94">0x00</td>
+		<td>U.S.A</td>
+	</tr>
+	<tr>
+		<td width="94">0x01</td>
+		<td>France</td>
+	</tr>
+	<tr>
+		<td width="94">0x02</td>
+		<td>Germany</td>
+	</tr>
+	<tr>
+		<td width="94">0x03</td>
+		<td>U.K.</td>
+	</tr>
+	<tr>
+		<td width="94">0x04</td>
+		<td>Denmark I</td>
+	</tr>
+	<tr>
+		<td width="94">0x05</td>
+		<td>Sweden</td>
+	</tr>
+	<tr>
+		<td width="94">0x06</td>
+		<td>Italy</td>
+	</tr>
+	<tr>
+		<td width="94">0x07</td>
+		<td>Spain I</td>
+	</tr>
+	<tr>
+		<td width="94">0x08</td>
+		<td>Japan</td>
+	</tr>
+	<tr>
+		<td width="94">0x09</td>
+		<td>Nonway</td>
+	</tr>
+	<tr>
+		<td width="94">0x0A</td>
+		<td>Denmark II</td>
+	</tr>
+	<tr>
+		<td width="94">0x0B</td>
+		<td>Spain II</td>
+	</tr>
+	<tr>
+		<td width="94">0x0C</td>
+		<td>Latin America</td>
+	</tr>
+	<tr>
+		<td width="94">0x0D</td>
+		<td>Korea</td>
+	</tr>
+</table>
+<p><i>nCodePage</i><br>
+<br>
+[in] 指定字符的代码页。不同的代码页对0x80到0xFF的ASCII码值对应的符号定义是不同的。<br>
+<br>
+可以为以下列表中所列值之一。</p>
+<table border="1" width="43%" id="table2">
+	<tr>
+		<td width="90">Value</td>
+		<td>Meaning</td>
+	</tr>
+	<tr>
+		<td width="90">0x00</td>
+		<td>PC437 [U.S.A. Standard Europe</td>
+	</tr>
+	<tr>
+		<td width="90">0x01</td>
+		<td>Reserved</td>
+	</tr>
+	<tr>
+		<td width="90">0x02</td>
+		<td>PC850 [Multilingual]</td>
+	</tr>
+	<tr>
+		<td width="90">0x03</td>
+		<td>PC860 [Portuguese]</td>
+	</tr>
+	<tr>
+		<td width="90">0x04</td>
+		<td>PC863 [Canadian-French]</td>
+	</tr>
+	<tr>
+		<td width="90">0x05</td>
+		<td>PC865 [Nordic]</td>
+	</tr>
+	<tr>
+		<td width="90">0x12</td>
+		<td>PC852</td>
+	</tr>
+	<tr>
+		<td width="90">0x13</td>
+		<td>PC858</td>
+	</tr>
+</table>
+<p><br>
+<b><br>
+返回值</b><br>
+<br>
+如果函数成功，则返回值为 POS_SUCCESS。<br>
+<br>
+如果函数失败，则返回值为以下值之一：<br>
+<br>
+POS_FAIL<br>
+<br>
+POS_ERROR_INVALID_PARAMETER<br>
+<br>
+POS_ERROR_INVALID_HANDLE<br>
+<br>
+POS_ERROR_FILE<br>
+<br>
+<br>
+<b><br>
+备注</b><br>
+<br>
+1、有些打印机可能不支持所有字符集或代码页，详细信息请参考打印机配置样张或附带的用户手册。<br>
+<br>
+2、另请参考 <a href="POS_SetMode.htm">POS_SetMode</a>。<br>
+<br>
+<br>
+<br>
+<b>相关指令</b><br>
+<br>
+ESC R n，ESC t n<br>
+　</p>
+
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

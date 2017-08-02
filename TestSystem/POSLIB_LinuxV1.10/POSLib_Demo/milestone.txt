@@ -1,0 +1,28 @@
+仓库文件夹：/CVS\SoftWareDept
+
+模块名:	SW_POSDLL
+ 
+模块的作用：封装POS指令功能，接口支持串口、并口、USB口、以太网接口。
+
+相关联的模块：无
+
+子模块1的名称：SW_POSLIB_Demo
+
+子模块1的作用：封装POS指令功能，接口支持串口、并口、USB口、以太网接口
+
+子模块包含文件及描述：
+libusb.a      USB链接库文件
+makefile    
+POSLIB.a      POSLIB链接库文件
+TestPOSLIB.c  演示例程工程文件
+POSLIB.h      POSLIB头文件
+POSLIB.so     POSLIB链接库文件
+usb.h         USB链接库头文件
+	
+
+1、标签名:SV1-00-01-wangchao-090829-FirstSYSTest	 	
+   更改记录:首次提交系统测试。
+2、标签名:V1-00-wangchao-091105-FirstRelease	 	
+   更改记录:首次正式发布。
+		
+		

@@ -352,7 +352,7 @@ bool TestSystemUI::InitUI()
 
         while(laHR200 != NULL)
         {
-                if(!laHR200->LoadDriverSympol(SO_PATH"/HWILatechHR200.so"))
+                if(!laHR200->LoadDriverSympol(SO_PATH"/HWILatechBCR_HR200.so"))
                 {
 
                       ui->label_bcrStatus->setText(tr("加载外置条码枪驱动失败"));
@@ -374,8 +374,12 @@ bool TestSystemUI::InitUI()
                           ui->label_Tip->setText(errinfo);
                           break;
                 }
-                else
+                else {
                     qDebug()<<"hr200 init ok";
+                    laHR200->HscannerEnableCode(56);
+                    laHR200->HscannerEnableCode(57);
+                }
+
                   break;
         }
 
@@ -421,6 +425,7 @@ void TestSystemUI::InitBCR()
                system("echo \" Bcr init success\" >> BCRlog ");
            }
 
+              laBCR->HscannerEnableCode(56);
               laBCR->HscannerEnableCode(57);
               bcrInitFlag = true;
               ui->label_bcrStatus->setStyleSheet("color:black");

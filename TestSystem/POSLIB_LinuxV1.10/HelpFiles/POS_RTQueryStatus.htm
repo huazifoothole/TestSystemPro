@@ -1,0 +1,131 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>int POS_RTQueryStatus</title>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>int POS_RTQueryStatus(<br>
+<br>
+<i>int hPort,<br>
+&nbsp;<br>
+int nPortType,</i><br>
+<br>
+<i>char *pszStatus</i><br>
+<br>
+)</h1>
+<p><br>
+<br>
+<b>描述</b><br>
+<br>
+通过串口、USB接口返回当前打印机的状态。此函数是实时的。<br>
+<br>
+<br>
+<br>
+<b>参数<br>
+<br>
+</b>
+<i>hPort</i><br>
+&nbsp;<br>
+[in] 打开的端口句柄。<br>
+&nbsp;<br>
+&nbsp;<br>
+<i>nPortType</i><br>
+&nbsp;<br>
+[in] 端口类型,取值参考<a href="Functions.htm#6.参数nPortType为端口类型时，取值如下：">端口类型说明</a><br>
+<br>
+<br>
+<i>pszStatus</i><br>
+<br>
+[out] 指向接收返回状态的缓冲区，缓冲区大小为 1 个字节。 <br>
+<br>
+返回的各状态位意义如下表所示：</p>
+<table border="1" width="72%" id="table1">
+	<tr>
+		<td width="48">Bit</td>
+		<td width="63">Status</td>
+		<td>Meaning</td>
+	</tr>
+	<tr>
+		<td width="48">0</td>
+		<td width="63">0/1</td>
+		<td>钱箱连接器引脚 3 的电平为低/高（表示打开或关闭）</td>
+	</tr>
+	<tr>
+		<td width="48">1</td>
+		<td width="63">0/1</td>
+		<td>打印机联机/脱机</td>
+	</tr>
+	<tr>
+		<td width="48">2</td>
+		<td width="63">0/1</td>
+		<td>上盖关闭/打开</td>
+	</tr>
+	<tr>
+		<td width="48">3</td>
+		<td width="63">0/1</td>
+		<td>没有/正在由Feed键按下而进纸</td>
+	</tr>
+	<tr>
+		<td width="48">4</td>
+		<td width="63">0/1</td>
+		<td>打印机没有/有出错</td>
+	</tr>
+	<tr>
+		<td width="48">5</td>
+		<td width="63">0/1</td>
+		<td>切刀没有/有出错</td>
+	</tr>
+	<tr>
+		<td width="48">6</td>
+		<td width="63">0/1</td>
+		<td>有纸/纸将尽（纸将尽传感器探测）</td>
+	</tr>
+	<tr>
+		<td width="48">7</td>
+		<td width="63">0/1</td>
+		<td>有纸/纸用尽（纸传感器探测）</td>
+	</tr>
+</table>
+<p><br>
+<br>
+<b>返回值</b><br>
+<br>
+如果函数成功，则返回值为 POS_SUCCESS。<br>
+<br>
+如果函数失败，则返回值为以下值之一：<br>
+<br>
+POS_FAIL<br>
+<br>
+POS_ERROR_INVALID_HANDLE<br>
+<br>
+POS_ERROR_INVALID_PARAMETER<br>
+<br>
+POS_ERROR_FILE<br>
+<br>
+<br>
+<br>
+<b>备注</b><br>
+<br>
+1．此函数在并口、以太网接口通讯中无效。<br>
+<br>
+2．部分型号的打印机在上盖打开或打印头抬起、缺纸、Feed键按下等情况下，不能返回打印机的状态。<br>
+<br>
+3．另请参考 <a href="POS_QueryStatus.htm">POS_QueryStatus</a>。<br>
+<br>
+<br>
+<br>
+<b>相关指令</b><br>
+<br>
+DLE EOT n<br>
+<br>
+　</p>
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>int POS_Reset</title>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>int POS_Reset(<br>
+<br>
+<i>int hPort,<br>
+&nbsp;<br>
+int nPortType</i><br>
+<br>
+)</h1>
+<p><br>
+<br>
+<b>描述</b><br>
+<br>
+复位打印机，把打印缓冲区中的数据清除，字符和行高的设置被清除，打印模式被恢复到上电时的缺省模式。<br>
+<br>
+<br>
+<br>
+<b>参数</b><br>
+<br>
+<i>hPort</i><br>
+&nbsp;<br>
+[in] 打开的端口句柄。<br>
+&nbsp;<br>
+&nbsp;<br>
+<i>nPortType</i><br>
+&nbsp;<br>
+[in] 端口类型,取值参考<a href="Functions.htm#6.参数nPortType为端口类型时，取值如下：">端口类型说明</a><br>
+<br>
+<br>
+<br>
+<b>返回值</b><br>
+<br>
+如果函数成功，则返回值为 POS_SUCCESS。<br>
+<br>
+如果函数失败，则返回值为以下值之一：<br>
+<br>
+POS_FAIL<br>
+<br>
+POS_ERROR_INVALID_HANDLE<br>
+<br>
+POS_ERROR_FILE<br>
+<br>
+<br>
+<br>
+<b>备注</b><br>
+<br>
+函数成功执行后，则：<br>
+<br>
+1．接收缓冲区中的指令保留。<br>
+<br>
+2．宏定义保留。<br>
+<br>
+3．Flash 中的位图保留。<br>
+<br>
+4．Flash 中的数据保留。<br>
+<br>
+5．DIP开关的设置不进行再次检测。<br>
+<br>
+<br>
+<br>
+<b>相关指令</b><br>
+<br>
+ESC @<br>
+<br>
+　</p>
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

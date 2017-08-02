@@ -1,0 +1,201 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>HANDLE POS_Open</title>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>int POS_Open(<br>
+<br>
+<i>char *lpName, <br>
+<br>
+int nComBaudrate, <br>
+<br>
+int nComDataBits, <br>
+<br>
+int nComStopBits, <br>
+<br>
+int nComParity, <br>
+<br>
+int nParam</i><br>
+<br>
+)</h1>
+<p><br>
+<br>
+<b>描述</b><br>
+<br>
+打开端口。<br>
+<br>
+<br>
+<br>
+<b>参数</b><br>
+<br>
+<i>lpName</i><br>
+<br>
+[in] 指向以 null 结尾的打印机名称或端口名称。<br>
+<br>
+当参数nParam的值为POS_COM_DTR_DSR、POS_COM_RTS_CTS、POS_COM_XON_XOFF时， “1”，“2”，“3”，“4”等表示串口；<br>
+<br>
+当参数nParam的值为POS_OPEN_PARALLEL_PORT时，“1”，“2”等表示并口；<br>
+<br>
+当参数nParam的值为POS_OPEN_BYUSB_PORT时，USB设备识别号“0”，“1”，“496”，“497”等表示USB端口
+，USB打印机设备识别号参考“<a href="USBID.htm">打印机内部ID明细表</a>”。<br>
+<br>
+当参数nParam的值为POS_OPEN_NETPORT时，表示打开指定的网络接口，如“192.168.10.251”表示网络接口IP地址。<br>
+<br>
+<br>
+<i>nComBaudrate</i><br>
+<br>
+[in] 指定串口的波特率（bps）。 <br>
+<br>
+可以为以下值之一：<br>
+<br>
+9600，19200，38400，57600，115200等。<br>
+<br>
+具体的值与打印机的端口参数有关，不过最大不应超过115200。<br>
+<br>
+<br>
+<i>nComDataBits</i><br>
+<br>
+[in] 指定串口通讯时的数据位数。<br>
+<br>
+可以为 7 到 8。<br>
+<br>
+具体的值与打印机的端口参数有关。<br>
+<br>
+<br>
+<i>nComStopBits</i><br>
+<br>
+[in] 指定串口通讯时的数据停止位数。<br>
+<br>
+可以为以下值之一：</p>
+<table border="1" width="48%" id="table1">
+	<tr>
+		<td width="161">Flag</td>
+		<td width="71">Value</td>
+		<td>Meaning</td>
+	</tr>
+	<tr>
+		<td width="161">POS_COM_ONESTOPBIT</td>
+		<td width="71">0x01</td>
+		<td>停止位为1</td>
+	</tr>
+	<tr>
+		<td width="161">POS_COM_TWOSTOPBITS</td>
+		<td width="71">0x02</td>
+		<td>停止位为2</td>
+	</tr>
+</table>
+<p><br>
+<i>nComParity</i><br>
+<br>
+[in] 指定串口的奇偶校验方法。 <br>
+<br>
+可以为以下值之一：</p>
+<table border="1" width="48%" id="table2">
+	<tr>
+		<td width="161">Flag</td>
+		<td width="69">Value</td>
+		<td>Meaning</td>
+	</tr>
+	<tr>
+		<td width="161">POS_COM_NOPARITY</td>
+		<td width="69">0x00</td>
+		<td>无校验</td>
+	</tr>
+	<tr>
+		<td width="161">POS_COM_ODDPARITY</td>
+		<td width="69">0x01</td>
+		<td>奇校验</td>
+	</tr>
+	<tr>
+		<td width="161">POS_COM_EVENPARITY</td>
+		<td width="69">0x02</td>
+		<td>偶校验</td>
+	</tr>
+	</table>
+<p><br>
+<i>nParam<br>
+</i><br>
+[in] 指定串口的流控制（握手）方式、或表示通讯方式。请参考参数lpName的说明。<br>
+<br>
+可以为以下值之一：</p>
+<table border="1" width="57%" id="table3">
+	<tr>
+		<td width="175">Flag</td>
+		<td width="75">Value</td>
+		<td>Meaning</td>
+	</tr>
+	<tr>
+		<td width="175">POS_COM_DTR_DSR</td>
+		<td width="75">0x01</td>
+		<td>流控制为DTR/DST </td>
+	</tr>
+	<tr>
+		<td width="175">POS_COM_RTS_CTS</td>
+		<td width="75">0x02</td>
+		<td>流控制为RTS/CTS</td>
+	</tr>
+	<tr>
+		<td width="175">POS_COM_XON_XOFF</td>
+		<td width="75">0x03</td>
+		<td>流控制为XON/OFF</td>
+	</tr>
+	<tr>
+		<td width="175">POS_OPEN_PARALLEL_PORT</td>
+		<td width="75">0x12</td>
+		<td>打开并口通讯端口</td>
+	</tr>
+	<tr>
+		<td width="175">POS_OPEN_BYUSB_PORT</td>
+		<td width="75">0x13</td>
+		<td>打开USB通讯端口</td>
+	</tr>
+	<tr>
+		<td width="175">POS_OPEN_NETPORT</td>
+		<td width="75">0x15</td>
+		<td>打开网络接口</td>
+	</tr>
+</table>
+<p>其中前两项也统称为硬件流控制，一般选用 RTS/CTS 方式。<br>
+<br>
+<br>
+<b><br>
+返回值</b><br>
+<br>
+如果函数调用成功，返回一个已打开的端口句柄。<br>
+<br>
+如果函数调用失败，返回值为 INVALID_HANDLE_VALUE （-1）。<br>
+<br>
+<br>
+<br>
+<b>备注</b><br>
+<br>
+1．如果打开的是并口（LPT1，LPT2等），那么后面的参数 nComBaudrate，nComDataBits，nComStopBits，nComParity将被忽略，可以设置为0，并且参数nParam必需指定为POS_OPEN_PARALLEL_PORT。同样，打开USB端口或打印机驱动程序，nParam必需指定为相应的参数修改。<br>
+<br>
+2．如果由 lpName 指定的通讯端口被其他程序占用，那么返回值为 INVALID_HANDLE_VALUE。<br>
+<br>
+3．如果参数出错，也返回INVALID_HANDLE_VALUE。<br>
+<br>
+4．如果通讯端口已经打开，则会尝试关闭已经打开的端口，然后再去打开。<br>
+<br>
+5．如果参数nParam指定打开USB端口，则需要安装随机附带的端口驱动程序，并把打印机配置为支持USB端口模式。 <br>
+<br>
+6．另请参考 <a href="POS_Close.htm">POS_Close</a>，<a href="POS_Reset.htm">POS_Reset</a>。<br>
+<br>
+<br>
+<br>
+<b>相关指令</b><br>
+<br>
+[无]<br>
+　</p>
+
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

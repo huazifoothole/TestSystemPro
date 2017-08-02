@@ -1,0 +1,37 @@
+BODY {
+	font-family: ËÎÌו;
+	font-size: 12;
+}
+TD {
+	font-family: Arial;
+	font-size: 10;
+}
+H1 {
+	font-size: 150%;
+	background-color: #99CCFF;
+}
+H2 {
+	font-size: 120%;
+}
+H3 {
+	font-size: 110%;
+}
+H4 {
+	font-size: 100%;
+	font-style: Italic;
+}
+a:hover {
+	color: blue;
+	font-weight: bold;
+}
+A {
+	color: #5566AA;
+}
+TABLE {
+	cellpadding: 12;
+	border: 2px none;
+	bordercolor: #FFFFFF;
+	bordercolordark: #FFFFFF;
+	bordercolorlight: #FFFFFF;
+	background: #eeeeff
+}

@@ -1,0 +1,60 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>版本发布记录</title>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>附录 A 打印机补充说明</h1>
+<h2><br>
+A．1 打印模式</h2>
+<p>&nbsp;&nbsp;&nbsp; 一般情况下，打印机只使用两种工作模式：标准模式和页模式。<br>
+<br>
+&nbsp;&nbsp;&nbsp; 在标准模式下，只要打印机行缓冲区满或者接收到打印或进纸指令，打印机就打印并进纸。<br>
+<br>
+&nbsp;&nbsp;&nbsp; 例如：当调用函数<a href="POS_S_TextOut.htm">POS_S_TextOut</a>往打印机发送字符串“ABCDEF”时，打印机根据函数的参数对字符串进行处理，然后放在行缓冲区中， 
+等待打印。当调用函数 
+<a href="POS_FeedLine.htm">POS_FeedLine</a> 时，打印机将走纸并把行缓冲区中的字符串打印出来。但是，如果接收到的数据大于行缓冲区长度，打印机将会自动进纸并打印。<br>
+<br>
+&nbsp;&nbsp;&nbsp; 在页模式下，打印机把接收到的所有将要打印的数据（处理后的）都被存储在页缓冲区中，但是并没有打印动作。而是当调用函数 
+ 
+<a href="POS_PL_Print.htm">POS_PL_Print</a>时，才会走纸并打印页缓冲区中的数据。<br>
+<br>
+&nbsp;&nbsp;&nbsp; 例如：当调用函数 
+<a href="POS_PL_TextOut.htm">POS_PL_TextOut</a> 往打印机发送字符串“ABCDEF”时，打印机根据根据函数的参数对字符串进行处理，然后放在页缓冲区中，如果接着调用函数 
+ 
+<a href="POS_FeedLine.htm">POS_FeedLine</a>，打印机页缓冲区中把起始点坐标移到下一行的行首。如果调用函数 
+ 
+<a href="POS_PL_Print.htm">POS_PL_Print</a> 时，打印机将走纸并打印页缓冲区中的数据。<br>
+<br>
+&nbsp;&nbsp;&nbsp; 在两种模式下，打印完毕后都不会自动清除缓冲区。如果在页模式下，可以调用 
+ 
+<a href="POS_PL_Clear.htm">POS_PL_Clear</a>来清除页缓冲区。<br>
+<br>
+&nbsp;&nbsp;&nbsp; 另外，还有一种打印模式是标签模式，分为黑标记型标签模式和白标记型标签模式．标签模式下的打印和页模式下的打印类似。<br>
+　</p>
+<h2>A．2 打印区域设置</h2>
+<p>1． 打印区域是由函数 
+<a href="POS_PL_SetArea.htm">POS_PL_SetArea</a>来设置的。如果在调用此函数之前所有的打印和进纸操作都已经完成，则打印机以左边（当你面对打印机时）作为打印区域的坐标原点（x0，y0）。矩形打印区域的宽度（dx 
+点）在 x 向（垂直于进纸方向）从坐标原点（x0，y0）向右扩展；高度（dy 点）在 y 
+向（进纸方向）向下扩展。如果没有用此函数来设置打印区域，则打印区域采用默认值。<br>
+<br>
+2． 打印机在打印区域和打印区域方向（由函数 
+<a href="POS_PL_SetArea.htm">POS_PL_SetArea</a>设置）设置之后，接收到的打印数据将会在打印区域内以字符、位图或条码左下角作为基点。打印数据中的下载的位图或条码数据以当前位置作为其左下角，与基线对齐。<br>
+<br>
+3． 在接收到一个包含有进纸的命令（函数<a href="POS_FeedLine.htm">POS_FeedLine</a>）之前，如果打印数据（包括字符间距）已经超出打印区域，则打印机自动进纸一行（进纸多少，取决于由函数 
+ 
+<a href="POS_SetLineSpacing.htm">POS_SetLineSpacing</a> 设置的行高），同时打印位置移到下一行的行首。<br>
+<br>
+4． 默认行高是1/6英寸，如果纵向分辨率为203 
+DPI，则大约相当于34点。如果在下一行的打印数据中含有在纵向上放大超出2倍的字符，或者位图占用2行甚至更多行，以及条码比正常字符高时，打印机进纸量不能满足需要，造成打印的字符和上一行打印的字符叠加。可以增加行高来避免此情况的发生。</p>
+
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

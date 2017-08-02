@@ -1,0 +1,109 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>int POS_SetMode</title>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>int POS_SetMode(<br>
+<br>
+<i>int hPort,<br>
+&nbsp;<br>
+int nPortType,</i><br>
+<br>
+<i>int nPrintMode</i><br>
+<br>
+)</h1>
+<p><br>
+<br>
+<b>描述</b><br>
+<br>
+设置打印机的打印模式。<br>
+<br>
+<br>
+<b><br>
+参数<br>
+<br>
+</b>
+<i>hPort</i><br>
+&nbsp;<br>
+[in] 打开的端口句柄。<br>
+&nbsp;<br>
+&nbsp;<br>
+<i>nPortType</i><br>
+&nbsp;<br>
+[in] 端口类型,取值参考<a href="Functions.htm#6.参数nPortType为端口类型时，取值如下：">端口类型说明</a><br>
+<br>
+<br>
+<i>nPrintMode<br>
+</i><br>
+[in] 指定打印模式。<br>
+<br>
+可以为以下值之一：</p>
+<table border="1" width="68%" id="table1">
+	<tr>
+		<td width="248">Flag</td>
+		<td width="102">Value</td>
+		<td>Meaning</td>
+	</tr>
+	<tr>
+		<td width="248">POS_PRINT_MODE_STANDARD</td>
+		<td width="102">0x00</td>
+		<td>标准模式（行模式）</td>
+	</tr>
+	<tr>
+		<td width="248">POS_PRINT_MODE_PAGE</td>
+		<td width="102">0x01</td>
+		<td>页模式</td>
+	</tr>
+	<tr>
+		<td width="248">POS_PRINT_MODE_BLACK_MARK_LABEL</td>
+		<td width="102">0x02</td>
+		<td>黑标记标签模式</td>
+	</tr>
+	<tr>
+		<td width="248">POS_PRINT_MODE_WHITE_MARK_LABEL</td>
+		<td width="102">0x03</td>
+		<td>白标记标签模式</td>
+	</tr>
+</table>
+<p><br>
+<b><br>
+<br>
+返回值</b><br>
+<br>
+如果函数成功，则返回值为 POS_SUCCESS。<br>
+<br>
+如果函数失败，则返回值为以下值之一：<br>
+<br>
+POS_FAIL<br>
+<br>
+POS_ERROR_INVALID_HANDLE<br>
+<br>
+POS_ERROR_INVALID_PARAMETER<br>
+<br>
+POS_ERROR_FILE<br>
+<br>
+<br>
+<br>
+<b>备注</b><br>
+<br>
+1、部分打印机型号不支持黑标记标签模式和白标记标签模式，请参考相关用户手册。<br>
+<br>
+2、另请参考 <a href="POS_CutPaper.htm">POS_CutPaper</a>。<br>
+<br>
+<br>
+<br>
+<b>相关指令</b><br>
+<br>
+ESC S，ESC L，ESC c 0 n<br>
+　</p>
+
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

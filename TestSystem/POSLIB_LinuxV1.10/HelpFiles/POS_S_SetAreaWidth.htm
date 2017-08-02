@@ -1,0 +1,87 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>int POS_S_SetAreaWidth</title>
+<link rel="stylesheet" type="text/css" href="default-c.css">
+</head>
+
+<body>
+
+<h1>int POS_S_SetAreaWidth(<br>
+<br>
+<i>int hPort,<br>
+&nbsp;<br>
+int nPortType,</i><br>
+<br>
+<i>int nWidth</i><br>
+<br>
+)</h1>
+<p><br>
+<br>
+<b>描述</b><br>
+<br>
+设置标准模式下的打印区域宽度。<br>
+<br>
+<br>
+<br>
+<b>参数<br>
+<br>
+</b>
+<i>hPort</i><br>
+&nbsp;<br>
+[in] 打开的端口句柄。<br>
+&nbsp;<br>
+&nbsp;<br>
+<i>nPortType</i><br>
+&nbsp;<br>
+[in] 端口类型,取值参考<a href="Functions.htm#6.参数nPortType为端口类型时，取值如下：">端口类型说明</a><br>
+<br>
+<br>
+<i>nWidth<br>
+</i><br>
+[in] 指定打印区域的宽度。<br>
+<br>
+可以为 0 到 65535点。<br>
+<br>
+<br>
+<br>
+<b>返回值</b><br>
+<br>
+如果函数成功，则返回值为 POS_SUCCESS。<br>
+<br>
+如果函数失败，则返回值为以下值之一：<br>
+<br>
+POS_FAIL<br>
+<br>
+POS_ERROR_INVALID_HANDLE<br>
+<br>
+POS_ERROR_INVALID_PARAMETER<br>
+<br>
+POS_ERROR_FILE<br>
+<br>
+<br>
+<br>
+<b>备注<br>
+<br>
+</b>1．此函数只在行首有效。<br>
+<br>
+2．由于不同的打印机型号有不同的打印头宽度（或内部缓冲区的宽度），所以可打印区域的宽度是不同的。<br>
+<br>
+3．如果打印区域的宽度设置小于一个字符宽度，则当打印机接受打印一个字符时，会自动往右或左扩展到一个字符的宽度，当打印位图时，打印机会以同样的方式来扩展并打印。<br>
+<br>
+4．如果打印区域的宽度加上左边距宽度大于可打印区域宽度，则打印机使用的打印区域宽度大小是可打印区域宽度和左边距宽度之差。<br>
+<br>
+5．另请参考<a href="POS_PL_SetArea.htm">POS_PL_SetArea</a>和<a href="POS_SetMotionUnit.htm">POS_SetMotionUnit</a>。<br>
+<br>
+<br>
+<b><br>
+相关指令</b><br>
+<br>
+GS W nL nH<br>
+　</p>
+<p align="center"><a href="Index.htm">返回首页</a></p>
+
+</body>
+
+</html>

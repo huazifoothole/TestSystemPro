@@ -351,7 +351,7 @@ void LABCR::run()
                         //return;
 	    }
 
-            BarcodeScannerSetScanMode(2);
+//            BarcodeScannerSetScanMode(2);
 		if(!BarcodeScannerStartScan())
 	    {
 			qDebug()<<"BarcodeScannerStartScan failed!";
@@ -370,7 +370,7 @@ void LABCR::run()
                 {
                     break;  //跳出该循环
                 }
-                usleep(500000);  //500ms
+//                usleep(500000);  //500ms
             }
 
           //  unsigned int length;
@@ -378,7 +378,7 @@ void LABCR::run()
             {
 
                                  memset(buffer, 0, 2048*sizeof(char)); //每次在读票之前需先清空缓存数据
-                                 usleep(50000);  //50ms
+//                                 usleep(50000);  //50ms
                                 int len = BarcodeScannerGetTicketInfo(buffer, sizeof(buffer));
                                 qDebug()<<"bcr getdata len ="<<len;
 				BCRClearBuffer();
@@ -388,10 +388,11 @@ void LABCR::run()
                                         continue;
                             }
                                  Beep(0x0);
-				if(buffer[0] == 152)
+                                 OutResult = " ";
+                                 qDebug()<<"buffer[0] type ="<<buffer[0];
+                                 if(buffer[0] == 152 || buffer[0] == 70)
                                 {
                                         OutResult.sprintf("%s", (char*)buffer + 7);
-                                        qDebug()<<"OutResult ="<<OutResult;
                                         emit ScanFinished(0, OutResult);
 //                                        emit ScanFinished(0, QString(G2U((char*)buffer+7)));
                                 } else{
